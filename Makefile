@@ -52,6 +52,10 @@ vendor: ## Install vendors according to the current composer.lock file
 vendor: c=install --prefer-dist --no-dev --no-progress --no-scripts --no-interaction
 vendor: composer
 
+vendor-sync: ## Synchronize directory vendor from container to local
+vendor-sync: 
+	@$(DOCKER_COMP) cp php:/app/vendor ./
+
 ## —— Symfony 🎵 ———————————————————————————————————————————————————————————————
 sf: ## List all Symfony commands or pass the parameter "c=" to run a given command, example: make sf c=about
 	@$(eval c ?=)
