@@ -1,0 +1,10 @@
+App\Entity\Artwork:
+  first:
+    name: "Premier !"
+    description: "À jamais les premiers !!"
+    price: 1993
+    
+  drawing_{1..2}:
+    name: "<name()>"
+    description: "<text()>"
+    price: "<randomNumber(4, false)>"
