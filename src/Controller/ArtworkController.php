@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Repository\ArtworkRepository;
+use App\Service\ArtworkService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,9 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class ArtworkController extends AbstractController
 {
     #[Route('/list')]
-    public function list(ArtworkRepository $artworkRepository): Response
+    public function list(ArtworkService $artworkService): Response
     {
-        var_dump($artworkRepository->findAll());
+        var_dump($artworkService->getAll());
 
         return new Response();
     }
