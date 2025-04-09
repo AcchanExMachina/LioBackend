@@ -1,10 +1,18 @@
 App\Entity\Artwork:
   first:
+    id: premier
     name: "Premier !"
     description: "À jamais les premiers !!"
     price: 1993
+
+  painting:
+    id: painting
+    name: "chevre"
+    description: "une belle chèvre peinte"
+    price: 25
     
   drawing_{1..2}:
+    id: <slug()>
     name: "<name()>"
     description: "<text()>"
     price: "<randomNumber(4, false)>"

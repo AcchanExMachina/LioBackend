@@ -19,4 +19,15 @@ class ArtworkController extends AbstractController
         
         return JsonResponse::fromJsonString($jsonContent);
     }
+
+    #[Route('/pieceoFart/{id}')]
+    public function get(
+        SerializerInterface $serializer, 
+        ArtworkService $artworkService, 
+        string $id,
+    ): Response {
+        $jsonContent = $serializer->serialize($artworkService->getOne($id), 'json');
+
+        return JsonResponse::fromJsonString($jsonContent);
+    }
 }
